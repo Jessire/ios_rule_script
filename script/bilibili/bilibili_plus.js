@@ -58,7 +58,7 @@ let magicJS = MagicJS(scriptName, 'INFO');
       // 标签页处理，如去除会员购等等
       case /^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/tab/.test(magicJS.request.url):
         try{
-          const tabList = ['直播', '推荐', '热门', '追番', '影视'];
+          const tabList = ['直播', '推荐'];
           const topList = ['消息'];
           const bottomList = ['首页', '频道', '动态', '我的', '消息'];
           let obj = JSON.parse(magicJS.response.body);
@@ -84,9 +84,9 @@ let magicJS = MagicJS(scriptName, 'INFO');
       case /^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine/.test(magicJS.request.url):
         try{
           const item0List = ['离线缓存', '历史记录', '我的收藏', '稍后再看'];
-          const item1List = ['创作首页', '创作学院', '打卡挑战'];
-          const item2List = ['我的课程', '个性装扮', '我的钱包', '直播中心'];
-          const item3List = ['联系客服', '设置'];
+          const item1List = [''];
+          const item2List = [''];
+          const item3List = ['设置'];
           let obj = JSON.parse(magicJS.response.body);
           let items0 = obj['data']['sections_v2'][0]['items'].filter((e) =>{return item0List.indexOf(e.title)>=0;});
           obj['data']['sections_v2'][0]['items'] = items0;

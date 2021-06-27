@@ -60,7 +60,7 @@ let magicJS = MagicJS(scriptName, 'INFO');
         try{
           const tabList = ['直播', '推荐'];
           const topList = ['消息'];
-          const bottomList = ['首页', '频道', '动态', '我的', '消息'];
+          const bottomList = ['首页', '动态', '我的', '消息'];
           let obj = JSON.parse(magicJS.response.body);
           if (obj['data']['tab']){
             let tab = obj['data']['tab'].filter((e) =>{return tabList.indexOf(e.name)>=0;});
